@@ -17,7 +17,7 @@ public class AppTest {
     void 실험_ObjectMapper() throws JsonProcessingException {
         ArticleDto articleDto = new ArticleDto(1,"제목","내용");
 
-        String jsonStr = Ut.json.toJsonStr(articleDto, "");// articleDto을 줄 테니까 json으로 바꿔와봐
+        String jsonStr = Ut.json.toStr(articleDto, "");// articleDto을 줄 테니까 json으로 바꿔와봐
                                                                      // 실패하면 빈문자열로 갖고 오고
         assertThat(jsonStr).isNotBlank(); //jsonStr은 빈문자열이 아니다.
         assertThat(jsonStr).isEqualTo("""
