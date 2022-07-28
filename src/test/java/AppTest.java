@@ -4,9 +4,18 @@ import com.ll.exam.article.dto.ArticleDto;
 import com.ll.exam.util.Ut;
 import org.junit.jupiter.api.Test;
 
+import java.util.Map;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class AppTest {
+    @Test
+    void mapOf(){
+        Map<String, Object> map = Ut.mapOf("age",11,"name","Paul");
+
+        assertThat(map.get("age")).isEqualTo(11);
+        assertThat(map.get("name")).isEqualTo("Paul");
+    }
     @Test
     void assertJ_assertThat(){
         int rs = 10 + 20;
