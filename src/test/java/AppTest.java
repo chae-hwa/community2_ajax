@@ -33,7 +33,7 @@ public class AppTest {
         ArticleDto articleDtoOrigin = new ArticleDto(1,"제목","내용");
         String jsonStr = Ut.json.toStr(articleDtoOrigin, "");
 
-        ArticleDto articleDtoFromJson = (ArticleDto)Ut.json.toObj(jsonStr, ArticleDto.class,  null); //jsonStr을 Article class 객체로 만들어 달라.
+        ArticleDto articleDtoFromJson = Ut.json.toObj(jsonStr, ArticleDto.class,  null); //jsonStr을 Article class 객체로 만들어 달라.
 
         assertThat(articleDtoOrigin).isEqualTo(articleDtoFromJson);
     }
